@@ -17,5 +17,11 @@ public:
 
     auto it_greater =
         std::upper_bound(rth_values.begin(), rth_values.end(), target);
+    int row_maybe_contains = std::distance(rth_values.begin(), it_greater);
+    if (mtx[row_maybe_contains][0] > target)
+      return false;
+
+    return std::binary_search(mtx[row_maybe_contains].begin(),
+                              mtx[row_maybe_contains].end(), target);
   }
 };
