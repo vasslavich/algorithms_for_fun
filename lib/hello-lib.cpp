@@ -27,7 +27,7 @@ int Tests::findMissing(std::vector<int> & arr){
   fmt::print("      check ... {}, {}\n", sum, half);
 
   int sum2 = 0;
-  for(int i = 0; i < arr.size(); ++i){
+  for(size_t i = 0; i < arr.size(); ++i){
     sum2 += arr[i];
   }
 

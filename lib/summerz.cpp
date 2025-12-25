@@ -102,11 +102,11 @@ int v1(std::vector<int> v, int p) {
     int x = -1, y = -1;
 
     for (size_t i = 0; i < (v.size() - 1); ++i) {
-      if (used.contains(i))
+      if (used.count(i))
         continue;
 
       for (size_t j = i + 1; j < v.size(); ++j) {
-        if (used.contains(j))
+        if (used.count(j))
           continue;
 
         int test_diff = diff(v[i], v[j]);

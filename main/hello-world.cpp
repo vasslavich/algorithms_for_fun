@@ -2,8 +2,10 @@
 #include "lib/jump.h"
 #include "lib/summerz.h"
 //#include "lib/usestrings.h"
-#include "lib/word_search.h"
 #include "lib/largest_number.h"
+#include "lib/unique_path.h"
+#include "lib/word_search.h"
+#include "lib/rotate_2d.h"
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -61,8 +63,6 @@ void testJump() {
   });
 }
 
-
-
 int main(int argc, char **argv) {
   // HelloLib lib("Hello");
   // string thing = "world";
@@ -81,10 +81,16 @@ int main(int argc, char **argv) {
   // testFindMissing(v, 3);
 
   // testMinMax();
-  //testJump();
+  // testJump();
 
   // run("word search", testWordSearch);
-   run("largest number", testLargestNumber);
+  // run("largest number", testLargestNumber);
+  //bool upResult = RunTestUniquePaths();
+  //std::cout << "unique paths result is ..... " << std::boolalpha << upResult << std::endl;
 
+
+  bool rtResult = RunRtTest();
+  std::cout << "rotate ..... " << std::boolalpha << rtResult
+            << std::endl;
   return 0;
 }

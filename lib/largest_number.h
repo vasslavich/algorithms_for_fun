@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <iostream>
 
 class LargestNumber {
 public:
@@ -14,7 +15,7 @@ public:
   // 3, 30, 34, 5, 9 : 9534330
   //                   9533034
   static bool isGreaterOrEq(std::string lft, std::string rth) {
-    for (int l = 0; l < std::min(lft.size(), rth.size()); ++l) {
+    for (size_t l = 0; l < std::min(lft.size(), rth.size()); ++l) {
       if (lft[l] > rth[l])
         return true;
       if (lft[l] < rth[l])

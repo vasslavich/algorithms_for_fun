@@ -25,11 +25,11 @@ class CharBoard {
   bool getFlag(int i, int j) const { return used[i * n + j]; }
 
   bool unrollWord(const std::vector<std::string> &board, int i, int j,
-                  const std::string &word, int pos) {
+                  const std::string &word, size_t pos) {
     if (pos >= word.size())
       return true;
 
-    if (i < 0 || i >= board.size() || j < 0 || j >= board[i].size())
+    if (i < 0 || i >= m || j < 0 || j >= n)
       return false;
     if (getFlag(i, j))
       return false;
@@ -60,12 +60,12 @@ public:
     auto rvr_word = word;
     std::reverse(rvr_word.begin(), rvr_word.end());
 
-    for (int i = 0; i < board.size(); ++i) {
-      for (int j = 0; j < board[i].size(); ++j) {
-        if (board[i][j] == word[0] && unrollWord(board, i, j, word, 0))
+    for (int i = 0; i < (int)board.size(); ++i) {
+      for (int j = 0; j < (int)board[i].size(); ++j) {
+        if (board[i][j] == word[0] && unrollWord(board, i, j, word, 0ul))
           return true;
 
-        if (board[i][j] == rvr_word[0] && unrollWord(board, i, j, word, 0))
+        if (board[i][j] == rvr_word[0] && unrollWord(board, i, j, word, 0ul))
           return true;
       }
     }

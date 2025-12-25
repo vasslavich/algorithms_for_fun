@@ -6,10 +6,12 @@ cc_library(
     srcs = glob(["lib/*.cpp"]),
     hdrs = glob(["lib/*.h"]),
     deps = ["@fmt"],
+    copts = ["-std=c++20"]
 )
 
 cc_binary(
     name = "hello-world",
     srcs = ["main/hello-world.cpp"],
     deps = [":hello-lib"],
+    copts = ["-std=c++20"]
 )
