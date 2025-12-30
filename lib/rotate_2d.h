@@ -95,8 +95,8 @@ public:
 };
 
 void printM2d(const auto &m, int M, int N) {
-  for (size_t i = 0; i < M; ++i) {
-    for (size_t j = 0; j < N; ++j) {
+  for (int i = 0; i < M; ++i) {
+    for (int j = 0; j < N; ++j) {
       std::cout << m[i][j] << " ";
     }
 
