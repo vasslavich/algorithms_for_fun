@@ -8,6 +8,7 @@
 #include "lib/unique_path.h"
 #include "lib/word_search.h"
 #include "lib/rbuf.h"
+#include "lib/radixsort.h"
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -91,13 +92,16 @@ int main(int argc, char **argv) {
   // std::cout << "unique paths result is ..... " << std::boolalpha << upResult
   // << std::endl;
 
-  bool rtResult = false;
+  bool rtResult = true;
 
   // rtResult = RunRtTest();
   // rtResult = IntlvStrTestExectue();
 
-  //std::cout << "all tests ..... " << std::boolalpha << rtResult << std::endl;
+  //TestRingBuf2();
 
-  TestRingBuf2();
+  RdxSrtTests<int> tests;
+  tests.run();
+
+  std::cout << "all tests ..... " << std::boolalpha << rtResult << std::endl;
   return 0;
 }
